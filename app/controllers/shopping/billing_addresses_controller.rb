@@ -92,12 +92,11 @@ class Shopping::BillingAddressesController < Shopping::BaseController
 
   def form_info
     @shopping_addresses = current_user.shipping_addresses
-    @states     = State.form_selector
+    @states  = State.form_selector
   end
 
   def update_order_address_id(id)
-    session_order.update_attributes(
-                          :bill_address_id => id
-                                    )
+    session_order.update_attributes(:bill_address_id => id)
+                                    
   end
 end
